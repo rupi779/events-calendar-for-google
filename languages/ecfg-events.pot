@@ -1,0 +1,68 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Events Calendar for Google\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 11:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0\n"
+"X-Domain: events-calendar-for-google"
+
+#: includes/templates/attributes/time.php:27
+msgid "All Day Event"
+msgstr ""
+
+#. Author of the plugin
+msgid "Blue Plugins"
+msgstr ""
+
+#. Name of the plugin
+msgid "Events Calendar for Google"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://blueplugins.com/"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"List Google Calender with customized layouts. Manange your Calender events "
+"Style from wordpress dashboard."
+msgstr ""
+
+#: includes/class-ecfg-template-functions.php:237
+msgid "Next"
+msgstr ""
+
+#: includes/class-ecfg-template-functions.php:46
+msgid "Please check your internet connection."
+msgstr ""
+
+#: includes/class-ecfg-template-functions.php:77
+#: includes/class-ecfg-template-functions.php:98
+msgid "Please go to plugin settings page and save your settings"
+msgstr ""
+
+#: includes/class-ecfg-template-functions.php:40
+msgid "Please go to plugin settings page and save your settings."
+msgstr ""
+
+#: includes/class-ecfg-template-functions.php:225
+msgid "Previous"
+msgstr ""
+
+#: includes/templates/attributes/read-more.php:19
+msgid "Read More"
+msgstr ""
+
+#: includes/templates/attributes/location.php:23
+msgid "View on Map"
+msgstr ""

@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Events Calendar for Google\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-05 10:54+0000\n"
+"PO-Revision-Date: 2022-06-05 12:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0\n"
+"X-Domain: events-calendar-for-google"
+
+#: includes/templates/attributes/time.php:27
+msgid "All Day Event"
+msgstr "Evento De Todo El Día"
+
+#. Author of the plugin
+msgid "Blue Plugins"
+msgstr "Blue Plugins"
+
+#. Name of the plugin
+msgid "Events Calendar for Google"
+msgstr "Events Calendar for Google"
+
+#. Author URI of the plugin
+msgid "https://blueplugins.com/"
+msgstr "https://blueplugins.com/"
+
+#. Description of the plugin
+msgid ""
+"List Google Calender with customized layouts. Manange your Calender events "
+"Style from wordpress dashboard."
+msgstr ""
+"Lista de Google Calendario con diseños personalizados. Manange su Calendario "
+"de eventos de Estilo de panel de wordpress."
+
+#: includes/class-ecfg-template-functions.php:237
+msgid "Next"
+msgstr "Siguiente"
+
+#: includes/class-ecfg-template-functions.php:46
+msgid "Please check your internet connection."
+msgstr "Por favor, compruebe su conexión a internet."
+
+#: includes/class-ecfg-template-functions.php:77
+#: includes/class-ecfg-template-functions.php:98
+msgid "Please go to plugin settings page and save your settings"
+msgstr ""
+"Por favor, vaya a la configuración del plugin de la página y guardar la "
+"configuración"
+
+#: includes/class-ecfg-template-functions.php:40
+msgid "Please go to plugin settings page and save your settings."
+msgstr ""
+"Por favor, vaya a la configuración del plugin de la página y guardar la "
+"configuración."
+
+#: includes/class-ecfg-template-functions.php:225
+msgid "Previous"
+msgstr "Anterior"
+
+#: includes/templates/attributes/read-more.php:19
+msgid "Read More"
+msgstr "Leer Más"
+
+#: includes/templates/attributes/location.php:23
+msgid "View on Map"
+msgstr "Ver en el Mapa"

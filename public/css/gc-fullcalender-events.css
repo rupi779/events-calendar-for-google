@@ -1,0 +1,45 @@
+/*events calendar design*/
+.fc .fc-toolbar-title {
+    color: var(--tgc-desc-title-color) !important;
+    font-weight: 600;
+}
+table.fc-col-header {
+    margin: 0px;
+}
+table.fc-scrollgrid-sync-table {
+    margin-bottom: 0px;
+}
+th.fc-col-header-cell.fc-day, .fc-daygrid-event-harness a {
+   background: #000;
+   background: var(--tgc-buttons-background);
+}
+
+button.fc-button.fc-button-primary:hover {
+   background: #000;
+   background: var(--tgc-hover-buttons);
+   color: #fff;
+   color: var(--tgc-hover-buttons-text);
+   
+}
+a.fc-col-header-cell-cushion {
+    color: #fff;
+	color: var(--tgc-buttons-text-color);
+    text-decoration: none !important;
+	padding: 5px!important;
+    font-size: 18px;
+}
+
+a.fc-daygrid-day-number {
+    color: #494444;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+button.fc-button.fc-button-primary {
+    margin: 0px 3px;
+}
+
+/*event color*/
+.fc-h-event .fc-event-main {
+    color: #fff;
+	color: var(--tgc-buttons-text-color);
+}
