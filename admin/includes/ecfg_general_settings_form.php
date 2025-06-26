@@ -23,14 +23,14 @@ function gc_events_api_key_callback($args) {
     $options = get_option('gc_general_settings');
     $value = isset($options['gc_events_api_key']) ? $options['gc_events_api_key'] : '';
     echo '<input type="text" id="' . esc_attr($args['label_for']) . '" name="gc_general_settings[gc_events_api_key]" value="' . esc_attr($value) . '" required />';
-    echo '<p><strong>Create and Add Google Api to connect your calendar. <a href="https://console.cloud.google.com/apis/credentials">Get Your Api Credentials Here</a></strong></p>';
+    echo '<p><strong>Create and Add Google Api to connect your calendar. <a href="https://console.cloud.google.com/apis/credentials" target="_blank">Get Your Api Credentials Here</a></strong></p>';
 }
 
 function gc_calender_id_callback($args) {
     $options = get_option('gc_general_settings');
     $value = isset($options['gc_calender_id']) ? $options['gc_calender_id'] : '';
     echo '<input type="text" id="' . esc_attr($args['label_for']) . '" name="gc_general_settings[gc_calender_id]" value="' . esc_attr($value) . '" required />';
-    echo '<p><strong>Enter ID of particular calendar which events you want to list. <a href="https://calendar.google.com/calendar">Get your Calendar ID</a></strong></p>';
+    echo '<p><strong>Enter ID of particular calendar which events you want to list. <a href="https://calendar.google.com/calendar" target="_blank">Get your Calendar ID</a></strong></p>';
 }
 
 function gc_calender_layout_callback($args) {
