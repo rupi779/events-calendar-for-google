@@ -236,10 +236,31 @@ function ecfg_activate_events_calendar_google() {
  * This action is documented in includes/class-events-calendar-for-google-deactivator.php
  */
 function ecfg_deactivate_events_calendar_google() {
-	//nothing to do
+	delete_option('gc_advanced_settings');
+	delete_option('gc_general_settings');
+    delete_option('gc_event_attributes');
+
 }
 
 register_activation_hook( __FILE__, 'ecfg_activate_events_calendar_google' );
 register_deactivation_hook( __FILE__, 'ecfg_deactivate_events_calendar_google' );
 
 
+/**
+ * The code that shows pop-up during plugin deactivation.
+ */
+add_action('admin_enqueue_scripts', function ($hook) {
+    if ($hook === 'plugins.php') {
+        // Load SweetAlert2 from CDN
+        wp_enqueue_script('sweetalert2', 'https://cdn.jsdelivr.net/npm/sweetalert2@11', [], null, true);
+
+        // Load your JS file
+        wp_enqueue_script(
+            'my-plugin-deactivation-popup',
+            plugin_dir_url(__FILE__) . 'admin/js/deactivation-warning.js',
+            ['jquery', 'sweetalert2'],
+            '1.0',
+            true
+        );
+    }
+});
