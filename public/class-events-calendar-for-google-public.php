@@ -153,7 +153,7 @@ class ECFG_events_calendar_google_Public {
 		$tgc_date_bc_color = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_date_section_style','date-bc-color');
 		$tgc_date_bc_color  = isset($tgc_date_bc_color)? $tgc_date_bc_color : '#08267c';
 		$tgc_date_text_color = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_date_section_style','date-text-color');
-		$tgc_date_text_color = isset($tgc_date_text_color) ? $tgc_date_text_color : '#ffffff'; 
+		$tgc_date_text_color = isset($tgc_date_text_color) ? $tgc_date_text_color : '#e1e1e1'; 
 		/*event description style*/
 		$tgc_desc_bc_color =  $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_desc_style','desc-bc-color');
         $tgc_desc_bc_color  = $tgc_desc_bc_color ? $tgc_desc_bc_color : '#ffffff';

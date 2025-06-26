@@ -30,7 +30,7 @@ function ecfg_date_design_field_callback() {
 	$value = isset($options['gc_date_section_style']) ? $options['gc_date_section_style'] : array(
         'date_design' => 'style_1',
         'date-bc-color' => '#08267c',
-        'date-text-color' => '#fff'
+        'date-text-color' => '#e1e1e1'
     ); 
 
 echo '<div class="ecfg-ad-field-group">';
@@ -49,7 +49,7 @@ echo '<div class="ecfg-ad-field-group">';
 
     echo '<div class="ecfg-ad-field-row">';
     echo '<label for="date-text-color" class="ecfg-ad-field-label">Text Color</label>';
-    echo '<input type="text" id="date-text-color" name="gc_advanced_settings[gc_date_section_style][date-text-color]" value="'  . esc_attr($value['date-text-color']) . '" class="color-picker ecfg-ad-field-input" data-default-color="#ffffff">';
+    echo '<input type="text" id="date-text-color" name="gc_advanced_settings[gc_date_section_style][date-text-color]" value="'  . esc_attr($value['date-text-color']) . '" class="color-picker ecfg-ad-field-input" data-default-color="#e1e1e1">';
     echo '</div>'; // End field-row
     echo '</div>'; // End field-group
 
