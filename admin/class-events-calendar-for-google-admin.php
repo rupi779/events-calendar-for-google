@@ -77,6 +77,9 @@ class ECFG_events_calendar_google_Admin {
 		// Enqueue the color picker initialization script (with dependency on wp-color-picker)
 		wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_script( 'gc-color-picker', plugin_dir_url( __FILE__ ) . 'js/color-picker-init.js', array( 'wp-color-picker' ), $this->version, true );
+		wp_enqueue_script('ecfg_sweetalert', plugin_dir_url(__FILE__) . '../admin/js/ecfg_sweetalert.js', [], $this->version, true);
+		wp_enqueue_script('ecfg_plugin_deactivation_popup', plugin_dir_url(__FILE__) . '../admin/js/deactivation-warning.js', [], '$this->version', true );
+
     }
 
 
