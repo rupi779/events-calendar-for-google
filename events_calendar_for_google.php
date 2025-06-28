@@ -261,6 +261,8 @@ add_action('admin_enqueue_scripts', function ($hook) {
             ['jquery', 'sweetalert2'],
             '1.0',
             true
+			,
+			tyhg
         );
     }
 });
