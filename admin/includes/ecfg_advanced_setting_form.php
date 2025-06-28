@@ -27,25 +27,29 @@ function ECFG_Advance_setting_Form() {
 // Callbacks for Fields
 function ecfg_date_design_field_callback() {
     $options = get_option('gc_advanced_settings');
-	$value = isset($options['gc_date_section_style']['date_design']) ? $options['gc_date_section_style']['date_design'] : 'style_1';
-    
+	$value = isset($options['gc_date_section_style']) ? $options['gc_date_section_style'] : array(
+        'date_design' => 'style_1',
+        'date-bc-color' => '#08267c',
+        'date-text-color' => '#e1e1e1'
+    ); 
+
 echo '<div class="ecfg-ad-field-group">';
     echo '<div class="ecfg-ad-field-row">';
     echo '<label for="date-design" class="ecfg-ad-field-label">Date Design</label>';
     echo '<select id="date_design" name="gc_advanced_settings[gc_date_section_style][date_design]">';
-    echo '<option value="style_1"' . selected($value, 'style_1', false) . '>Style 1</option>';
-    echo '<option value="style_2"' . selected($value, 'style_2', false) . '>Style 2</option>';
+     echo '<option value="style_1"' . selected($value['date_design'], 'style_1', false) . '>Style 1</option>';
+    echo '<option value="style_2"' . selected($value['date_design'], 'style_2', false) . '>Style 2</option>';
     echo '</select>';
     echo '</div>'; // End field-row
 
     echo '<div class="ecfg-ad-field-row">';
     echo '<label for="date-bc-color" class="ecfg-ad-field-label">Background Color</label>';
-    echo '<input type="text" id="date-bc-color" name="gc_advanced_settings[gc_date_section_style][date-bc-color]" value="' . esc_attr($options['gc_date_section_style']['date-bc-color']) . '" class="color-picker ecfg-ad-field-input" data-default-color="#08267c">';
+    echo '<input type="text" id="date-bc-color" name="gc_advanced_settings[gc_date_section_style][date-bc-color]" value="' . esc_attr($value['date-bc-color']) . '" class="color-picker ecfg-ad-field-input" data-default-color="#08267c">';
     echo '</div>'; // End field-row
 
     echo '<div class="ecfg-ad-field-row">';
     echo '<label for="date-text-color" class="ecfg-ad-field-label">Text Color</label>';
-    echo '<input type="text" id="date-text-color" name="gc_advanced_settings[gc_date_section_style][date-text-color]" value="' . esc_attr($options['gc_date_section_style']['date-text-color']) . '" class="color-picker ecfg-ad-field-input" data-default-color="#ffffff">';
+    echo '<input type="text" id="date-text-color" name="gc_advanced_settings[gc_date_section_style][date-text-color]" value="'  . esc_attr($value['date-text-color']) . '" class="color-picker ecfg-ad-field-input" data-default-color="#e1e1e1">';
     echo '</div>'; // End field-row
     echo '</div>'; // End field-group
 
