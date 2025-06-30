@@ -251,7 +251,7 @@ function ecfg_activate_events_calendar_google() {
         ),
         'gc_event_timezone' => array(
             'gc_timezone_preference' => 'default_cal',
-            'gc_custom_timezone'     => 'America/Toronto',
+            'gc_custom_timezone'     => 'UTC',
         )
     );
 
