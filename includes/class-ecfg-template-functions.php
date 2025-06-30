@@ -113,8 +113,8 @@ class ECFG_template_functions {
 		
 		$params = array();
 		/*Get current date*/
-		//$event_timezone = $this->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_custom_timezone');
-		//$timezone = new DateTimeZone($event_timezone); // Set the desired timezone
+		$event_timezone = $this->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_custom_timezone');
+		$timezone = new DateTimeZone($event_timezone); // Set the desired timezone
 		$datetime = new DateTime('now');
 		
 		/*Convert it to google calendar's rfc_format */
@@ -133,6 +133,7 @@ class ECFG_template_functions {
 		}
 		
 		return $url_param;
+
 	}
 	
 

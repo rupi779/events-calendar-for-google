@@ -1,0 +1,142 @@
+[33mcommit dc643d80be59f61227ee2b0e93ec252cf7eacd09[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mraj-sub-branch[m[33m)[m
+Author: rajwinder <sahotafarm778@gmail.com>
+Date:   Mon Jun 30 17:41:26 2025 +0300
+
+    Empty data values issue resolved
+
+[1mdiff --git a/events_calendar_for_google.php b/events_calendar_for_google.php[m
+[1mindex 6763b4c..b667439 100644[m
+[1m--- a/events_calendar_for_google.php[m
+[1m+++ b/events_calendar_for_google.php[m
+[36m@@ -228,6 +228,34 @@[m [mfunction ecfg_activate_events_calendar_google() {[m
+ 	//nothing to do[m
+ 	$time = strtotime("+1 day");[m
+ 	update_user_meta( get_current_user_id(), 'ecfg_activated_on', $time );[m
+[32m+[m	[32m$settings = array([m
+[32m+[m[32m        'gc_date_section_style' => array([m
+[32m+[m[32m            'date_design'     => 'style_1',[m
+[32m+[m[32m            'date-bc-color'   => '#08267c',[m
+[32m+[m[32m            'date-text-color' => '#e1e1e1',[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        'gc_event_desc_style' => array([m
+[32m+[m[32m            'title_tag'     => 'h4',[m
+[32m+[m[32m            'desc-bc-color' => '#ffffff',[m
+[32m+[m[32m            'title_color'   => '#08267c',[m
+[32m+[m[32m            'icon_color'    => '#08267c',[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        'gc_button_style' => array([m
+[32m+[m[32m            'button_bc'         => '#08267c',[m
+[32m+[m[32m            'button_text'       => '#ffffff',[m
+[32m+[m[32m            'button_bc_hover'   => '#08267c',[m
+[32m+[m[32m            'button_text_hover' => '#ffffff',[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        'gc_pagination' => array([m
+[32m+[m[32m            'gc_event_per_page' => '0',[m
+[32m+[m[32m        ),[m
+[32m+[m[32m        'gc_event_timezone' => array([m
+[32m+[m[32m            'gc_timezone_preference' => 'default_cal',[m
+[32m+[m[32m            'gc_custom_timezone'     => 'America/Toronto',[m
+[32m+[m[32m        )[m
+[32m+[m[32m    );[m
+[32m+[m
+[32m+[m[32m    add_option('gc_advanced_settings', $settings);[m
+ 	[m
+ }[m
+ [m
+[36m@@ -238,10 +266,6 @@[m [mfunction ecfg_activate_events_calendar_google() {[m
+ function ecfg_deactivate_events_calendar_google() {[m
+ [m
+ 	//nothing to do[m
+[31m-<<<<<<< HEAD[m
+[31m-[m
+[31m-=======[m
+[31m->>>>>>> fdd63d21f5e7ba72f88d4b5c33e71ff04bd23929[m
+ }[m
+ [m
+ register_activation_hook( __FILE__, 'ecfg_activate_events_calendar_google' );[m
+[1mdiff --git a/includes/class-ecfg-custom-hooks.php b/includes/class-ecfg-custom-hooks.php[m
+[1mindex 6844e15..1fcccae 100644[m
+[1m--- a/includes/class-ecfg-custom-hooks.php[m
+[1m+++ b/includes/class-ecfg-custom-hooks.php[m
+[36m@@ -224,21 +224,21 @@[m [mclass ECFG_Define_Custom_Hooks {[m
+ 		//gc-timezone-preference[m
+ 			 [m
+ 		    $timezone_type = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_timezone_preference');[m
+[31m-			if (empty($timezone_type)){$timezone_type = 'default_cal';}[m
+[31m-			if ($timezone_type == 'default_cal')[m
+[31m-			{[m
+[31m-                $timezone = 'UTC';[m
+[31m-						   [m
+[31m-			}[m
+[31m-			elseif ($timezone_type == 'custom')[m
+[32m+[m[41m			[m
+[32m+[m			[32mif ($timezone_type == 'custom')[m
+ 			{[m
+ 				$timezone = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_custom_timezone');[m
+                ////timezone is set to custom setting[m
+ 			[m
+ 			}[m
+[32m+[m			[32mif ($timezone_type == 'default_cal')[m
+[32m+[m			[32m{[m
+[32m+[m[32m                $timezone = 'UTC';[m
+[32m+[m[41m						   [m
+[32m+[m			[32m}[m
+ 				[m
+ 	return $timezone;[m
+[31m-   print_r($timezone);[m
+[32m+[m[41m   [m
+ 		[m
+    	}/*end of timezone function*/[m
+ 	[m
+[1mdiff --git a/includes/class-ecfg-template-functions.php b/includes/class-ecfg-template-functions.php[m
+[1mindex 7e5784f..e88ff28 100644[m
+[1m--- a/includes/class-ecfg-template-functions.php[m
+[1m+++ b/includes/class-ecfg-template-functions.php[m
+[36m@@ -114,29 +114,26 @@[m [mclass ECFG_template_functions {[m
+ 		$params = array();[m
+ 		/*Get current date*/[m
+ 		$event_timezone = $this->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_custom_timezone');[m
+[31m-[m
+[31m-		if (isset($event_timezone))[m
+[32m+[m		[32m$timezone = new DateTimeZone($event_timezone); // Set the desired timezone[m
+[32m+[m		[32m$datetime = new DateTime('now');[m
+[32m+[m		[32mprint_r($event_timezone);[m
+[32m+[m		[32m/*Convert it to google calendar's rfc_format */[m
+[32m+[m		[32m$rfc_format = $datetime->format('c');[m
+[32m+[m[41m		[m
+[32m+[m		[32m$params[] = 'orderBy=startTime';[m
+[32m+[m		[32m$params[] ='maxResults=100';[m
+[32m+[m		[32m$params[] = 'timeMin='.urlencode($rfc_format);[m
+[32m+[m		[32m//$website_timezone = wp_timezone_string();[m
+[32m+[m		[32m//may be needed timezone as ctx here[m
+[32m+[m[41m		[m
+[32m+[m		[32m$url_param = '';[m
+[32m+[m		[32mforeach($params as $param)[m
+ 		{[m
+[31m-			$timezone = new DateTimeZone($event_timezone); // Set the desired timezone[m
+[31m-			$datetime = new DateTime('now');[m
+[31m-			[m
+[31m-			/*Convert it to google calendar's rfc_format */[m
+[31m-			$rfc_format = $datetime->format('c');[m
+[31m-			[m
+[31m-			$params[] = 'orderBy=startTime';[m
+[31m-			$params[] ='maxResults=100';[m
+[31m-			$params[] = 'timeMin='.urlencode($rfc_format);[m
+[31m-			//$website_timezone = wp_timezone_string();[m
+[31m-			//may be needed timezone as ctx here[m
+[31m-			[m
+[31m-			$url_param = '';[m
+[31m-			foreach($params as $param)[m
+[31m-			{[m
+[31m-				$url_param.= '&'.$param;[m
+[31m-			}[m
+[31m-			[m
+[31m-			return $url_param;[m
+[32m+[m			[32m$url_param.= '&'.$param;[m
+ 		}[m
+[32m+[m[41m		[m
+[32m+[m		[32mreturn $url_param;[m
+[32m+[m[41m		[m
+ 	}[m
+ 	[m
+ [m

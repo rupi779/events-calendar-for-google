@@ -228,6 +228,34 @@ function ecfg_activate_events_calendar_google() {
 	//nothing to do
 	$time = strtotime("+1 day");
 	update_user_meta( get_current_user_id(), 'ecfg_activated_on', $time );
+	$settings = array(
+        'gc_date_section_style' => array(
+            'date_design'     => 'style_1',
+            'date-bc-color'   => '#08267c',
+            'date-text-color' => '#e1e1e1',
+        ),
+        'gc_event_desc_style' => array(
+            'title_tag'     => 'h4',
+            'desc-bc-color' => '#ffffff',
+            'title_color'   => '#08267c',
+            'icon_color'    => '#08267c',
+        ),
+        'gc_button_style' => array(
+            'button_bc'         => '#08267c',
+            'button_text'       => '#ffffff',
+            'button_bc_hover'   => '#08267c',
+            'button_text_hover' => '#ffffff',
+        ),
+        'gc_pagination' => array(
+            'gc_event_per_page' => '0',
+        ),
+        'gc_event_timezone' => array(
+            'gc_timezone_preference' => 'default_cal',
+            'gc_custom_timezone'     => 'America/Toronto',
+        )
+    );
+
+    add_option('gc_advanced_settings', $settings);
 	
 }
 
@@ -238,7 +266,7 @@ function ecfg_activate_events_calendar_google() {
 function ecfg_deactivate_events_calendar_google() {
 
 	//nothing to do
-
+//delete_option('gc_advanced_settings');
 }
 
 register_activation_hook( __FILE__, 'ecfg_activate_events_calendar_google' );
