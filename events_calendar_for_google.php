@@ -149,7 +149,6 @@ class ECFG_Events_Calendar_for_Google{
 		add_action('admin_init', array($ECFG_events_admin,'ECFG_admin_settings_pages')); // including setting fields pages
     		
 		/*including setting pages*/
-		 
 	
 	}
 
@@ -170,7 +169,7 @@ class ECFG_Events_Calendar_for_Google{
 		add_shortcode( 'ECFG_calender_events', array( $plugin_public, 'ECFG_load_calender_events' ) );
 	    add_action( 'wp_ajax_nopriv_ECFG_advance_filter_search',array($plugin_public,'ECFG_advance_filter_search'));
 		add_action( 'wp_ajax_ECFG_advance_filter_search',array($plugin_public,'ECFG_advance_filter_search'));
-		add_action( 'wp_ajax_nopriv_ECFG_events_pagination',array($plugin_public,'ECFG_events_pagination'));
+		 add_action( 'wp_ajax_nopriv_ECFG_events_pagination',array($plugin_public,'ECFG_events_pagination'));
 		add_action( 'wp_ajax_ECFG_events_pagination',array($plugin_public,'ECFG_events_pagination'));
 			
 
@@ -237,11 +236,11 @@ function ecfg_activate_events_calendar_google() {
  * This action is documented in includes/class-events-calendar-for-google-deactivator.php
  */
 function ecfg_deactivate_events_calendar_google() {
-	delete_option('gc_advanced_settings');
-	delete_option('gc_general_settings');
-    delete_option('gc_event_attributes');
-	
+
+	//nothing to do
+
 }
 
 register_activation_hook( __FILE__, 'ecfg_activate_events_calendar_google' );
 register_deactivation_hook( __FILE__, 'ecfg_deactivate_events_calendar_google' );
+
