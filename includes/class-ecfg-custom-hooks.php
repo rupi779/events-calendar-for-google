@@ -223,7 +223,8 @@ class ECFG_Define_Custom_Hooks {
 	public function ecfg_google_timezone_function() {
 		//gc-timezone-preference
 		    $timezone_type = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_timezone_preference');
-           	if ($timezone_type == 'custom')
+			
+			if ($timezone_type == 'custom')
 			{
 				$timezone = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_custom_timezone');
                ////timezone is set to custom setting
@@ -234,9 +235,9 @@ class ECFG_Define_Custom_Hooks {
                 $timezone = 'UTC';
 						   
 			}
-	
+				
 	return $timezone;
-
+   
 		
    	}/*end of timezone function*/
 	
