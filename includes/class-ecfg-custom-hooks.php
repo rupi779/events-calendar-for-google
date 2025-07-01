@@ -222,7 +222,7 @@ class ECFG_Define_Custom_Hooks {
 	 */
 	public function ecfg_google_timezone_function() {
 		//gc-timezone-preference
-		    $timezone_type = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_timezone_preference');
+		    $timezone_type = $this->template_function->ECFG_option_group_field('gc_advanced_settings','gc_event_timezone','gc_timezone_preference')?? 'default_cal';
 			
 			if ($timezone_type == 'custom')
 			{
