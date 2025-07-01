@@ -112,9 +112,10 @@ class ECFG_events_calendar_google_Public {
 		$client_key = $this->template_function->client_key; 
 		$calender_id = $this->template_function->calender_id; 
 		$timezone = new DateTimeZone($this->custom_hooks->ecfg_google_timezone_function());
+		$timezone_name = $timezone->getName(); 
 	    $current_date = new DateTime('now', $timezone);
 		$formatted_date = $current_date->format('Y-m-d H:i');
-		
+				
 		
 		/*the above timezone function sets the calendar timezone .further called by fullcalendar-events.js*/ 
 		
@@ -123,7 +124,7 @@ class ECFG_events_calendar_google_Public {
 			'api' => $client_key,
 			'id' => $calender_id,
 			'current_date'=>$formatted_date,
-			'cal_timezone'=>$timezone,
+			'cal_timezone'=>$timezone_name,
 		); 
         wp_enqueue_script( 'gc-fullcalender-layout', plugin_dir_url( __FILE__ ) . 'js/gc-fullcalender.js', array( 'jquery' ), $this->version, false );   
 		wp_enqueue_script( 'gc-fullcalender-events', plugin_dir_url( __FILE__ ) . 'js/gc-fullcalender-events.js', array( 'jquery' ), $this->version, true );
