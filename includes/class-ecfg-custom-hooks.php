@@ -17,7 +17,7 @@
  * @author     Blue Plugins 
  */
 class ECFG_Define_Custom_Hooks {
-      
+     public $template_function; 
 	/*Introducing variables here*/  
    	
 		

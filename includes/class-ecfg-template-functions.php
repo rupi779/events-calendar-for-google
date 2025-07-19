@@ -18,8 +18,9 @@
  * @author     Blue Plugins <rupinder.php@gmail.com>
  */
 class ECFG_template_functions {
-      
-	/*Introducing variables here*/  
+    public $calender_id;
+    public $client_key;
+		/*Introducing variables here*/  
    	protected $error_message;
 		
 	public function __construct() {
