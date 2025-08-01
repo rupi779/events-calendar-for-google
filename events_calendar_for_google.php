@@ -6,7 +6,7 @@
  * @wordpress-plugin
  * Plugin Name:       Events Calendar for Google
  * Description:       List Google Calender with customized layouts. Manange your Calender events Style from wordpress dashboard.
- * Version:           3.2.0
+ * Version:           3.2.1
  * Author:            Blue Plugins
  * Author URI:        https://blueplugins.com/
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'ECFG_VERSION', '3.2.0' );
+define( 'ECFG_VERSION', '3.2.1' );
 define('ECFG_PLUGIN_DIR',plugin_dir_path( __FILE__ ));
 
 
@@ -56,7 +56,7 @@ class ECFG_Events_Calendar_for_Google{
 		if ( defined( 'ECFG_VERSION' ) ) {
 			$this->version = ECFG_VERSION;
 		} else {
-			$this->version = '3.2.0';
+			$this->version = '3.2.1';
 		}
 		$this->plugin_name = 'events_calendar_google';
 

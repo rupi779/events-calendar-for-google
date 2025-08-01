@@ -30,7 +30,9 @@ class ECFG_events_calendar_google_Public {
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
 	private $plugin_name;
-
+	public $template_function;
+    public $custom_hooks;
+    public $layout;
 	/**
 	 * The version of this plugin.
 	 *
