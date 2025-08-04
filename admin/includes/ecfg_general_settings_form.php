@@ -5,7 +5,7 @@
     }
     ?>
     <div class="wrap">
-        <h1>GC Events Settings</h1>
+        <h1>GC General Settings</h1>
         <form method="post" action="options.php">
             <?php
             settings_fields('gc_general_settings');// to  hold the value in database

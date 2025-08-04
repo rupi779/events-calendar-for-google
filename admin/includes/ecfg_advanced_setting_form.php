@@ -7,7 +7,7 @@ function ECFG_Advance_setting_Form() {
     }
     ?>
     <div class="wrap ecfg_advance_settings_wrap">
-        <h1>GC Events Settings</h1>
+        <h1>GC Advanced Settings</h1>
         <form method="post" action="options.php">
             <?php
             // Output security fields for the registered setting "gc_advanced_settings"
