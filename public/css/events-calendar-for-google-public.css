@@ -240,7 +240,23 @@ span.tgse_icon {
     text-align: left;
 	margin: 20px 0px;
 }
-
+.tgse_single_section .tgse_date_day{
+    font-size: 40px;
+    display: inline-block;
+    font-weight: 500;
+}
+.tgse_single_section .tgse_date_month{
+    font-size: 40px;
+    display: inline-block;
+    font-weight: 500;
+}
+.tgs_single_event .tgse_header{
+    font-size: 60px;
+    color: #000;
+}
+.tgs_single_event {
+    padding: 0px 20px;
+}
 /*load more design*/
 .gc_load_more_events {
     text-align: center;

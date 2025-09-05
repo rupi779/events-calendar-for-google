@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php do_action('ecfg_e_time',$start_date,$end_date,$alldayevent,$event_timezone);?>
 					
 					<!--inludes Read more-->
-					<?php do_action('ecfg_e_more',$event_link);?>
+					<?php do_action('ecfg_e_more',$events[$i]);?>
 													
 						
 					

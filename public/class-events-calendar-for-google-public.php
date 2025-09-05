@@ -424,8 +424,6 @@ class ECFG_events_calendar_google_Public {
 
 		    return $output; 		
 	    }
-		
-	
+
 
 }
-

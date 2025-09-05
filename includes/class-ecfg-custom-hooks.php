@@ -90,6 +90,26 @@ class ECFG_Define_Custom_Hooks {
 	}
 	
 	/**
+	 * The function to call single event description
+	 * @since     1.1.0
+	 */
+	public function ecfg_e_desc_single($event_content) {
+    
+
+	    $show_desc  = $this->template_function->ECFG_option_field('gc_event_attributes','gc-event-attribute-description');
+   
+		if(isset($event_content) && $event_content != '' && $show_desc == 'on' || $show_desc == '' )
+				{
+				
+				//echo current_date_function();
+				
+				echo '<div class="tgse_description">
+						<span>'.esc_html($event_content).'</span>
+						</div>';
+				}
+	}
+
+	/**
 	 * The function to call event title
 	 * @since     1.1.0
 	 */
@@ -103,7 +123,7 @@ class ECFG_Define_Custom_Hooks {
 		<div class="tgse_location">
 		<span class="tgse_location_icon tgse_icon"><li class="fa fa-map-marker-alt"></li></span>
 		<span class="tgse_location_adress"><?php echo wp_kses_post($event_location);?></span>
-		<a href="<?php echo esc_url($gmap_link);?>"><?php echo  esc_html__('View on Map','events-calendar-for-google'); ?></a>
+		<a target="_blank" href="<?php echo esc_url($gmap_link);?>"><?php echo  esc_html__('View on Map','events-calendar-for-google'); ?></a>
 			
 		</div>
 		<?php 
@@ -245,18 +265,23 @@ class ECFG_Define_Custom_Hooks {
 	 * The function to Add read more Link at link
 	 * @since     1.1.0
 	 */
-	public function ecfg_e_more_function($event_link) {
+	public function ecfg_e_more_function($event) {
+    $show_readmore   = $this->template_function->ECFG_option_field('gc_event_attributes','gc-event-attribute-readmore');
     
-	    $show_readmore  = $this->template_function->ECFG_option_field('gc_event_attributes','gc-event-attribute-readmore');
-		if($show_readmore == 'on' || $show_readmore == '')
-		{
-		?>
-		<div class="tgse_readmore">
-		<a class="tgse_readmore_link" href="<?php echo esc_url($event_link);?>" target="_blank"><?php echo  esc_html__('Read More','events-calendar-for-google'); ?></a>
-		</div>
-		<?php
-		}
-   	}
-	
+    if ($show_readmore == 'on' || $show_readmore == '') {
+        // URL-safe base64 so it never contains '/' or '+'
+        $event_key = ecfg_b64url_encode($event['link']);
+        $link = site_url('event-details/' . $event_key . '/');
+        ?>
+        <div class="tgse_readmore">
+            <a class="tgse_readmore_link" target= "_blank"
+               href="<?php echo esc_url($link); ?>">
+               <?php echo esc_html__('Read More','events-calendar-for-google-pro'); ?>
+            </a>
+        </div>
+        <?php
+    }
+}
+
 
 }/*end of class*/
