@@ -5,7 +5,7 @@ Tags: calender, google calendar , event calendar, event, events
 Requires at least: 4.5
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,11 @@ Please read the documentation for any other details.
 4. settings panel 
 
 == Changelog ==
+<h2> Version 3.2.2| 30 Dec 2025 </h2>
+<pre>
+ improvement: Depreciated errors removed.
+ improvement: Plugin testing with wordpress version 6.8 .
+</pre>
 <h2> Version 3.2.1| 31 July 2025 </h2>
 <pre>
  improvement: Depreciated errors removed.
