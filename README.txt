@@ -21,13 +21,9 @@ Google calendar is widely used to book appointments , Setting Events and their n
 it is a plus factor to have your announcements, events or programs listed so users can willingly take part or contribute . By Default , you can embed an iframe to list your calender on any website.
 This plugin extends the visual apperance of calender which is easy to use , more connective and many more customized options.
 
-### Follow the installation steps here
+### Quick Links
 
-[Read Documentation](http://docs.blueplugins.com/docs/the-google-calendar-events/install-events-calendar-for-google/)
-
-### Try Pro Version
-
-[Buy Here](https://blueplugins.com/events-calendar-for-google-pro/) | [Read Documentation](https://docs.blueplugins.com/docs/events-calendar-for-google-pro/general-settings/)
+[Try Pro Version](https://blueplugins.com/events-calendar-for-google-pro/) | [Read Documentation](https://docs.blueplugins.com/docs/events-calendar-for-google-pro/general-settings/)
 
 ### A video Guide
 https://youtu.be/l9TO_e65xLA
